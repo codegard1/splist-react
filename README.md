@@ -3,6 +3,7 @@ SPList is a simple component that fetches data from a REST service and presents 
 ## Goals
 - Implement fetch() to get multiple items 
 - Create SPListItem component to wrap around items
+- use Fabric UI
 
 ## Completed Goals
 - Implement fetch() to get a single item

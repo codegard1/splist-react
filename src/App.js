@@ -7,9 +7,10 @@ class App extends Component {
     super(props);
     this.state = {
       listData: [
-      "No Data in State"
+        "No Data in State"
       ]
     }
+
     this._handleClick = this._handleClick.bind(this);
     this._fetchListData = this._fetchListData.bind(this);
     this._updateListData = this._updateListData.bind(this);
@@ -40,22 +41,18 @@ class App extends Component {
       .then(function (apiData) {
         let item = Object.keys(apiData).map((key, index) => (key + ": " + apiData[key]));
         that._updateListData(item);
-        //console.log("item:", item);
-        //return item;
       })
       .catch(error => error);
   }
 
   _handleClick() {
     this._fetchListData();
-    
   }
 
   render() {
     return (
       <div className="App">
-        <SPList listTitle="My List" listData={this.state.listData} />
-        <button onClick={this._handleClick}>Refresh</button>
+        <SPList listTitle="My List" listData={this.state.listData} onClick={this._handleClick} />
       </div>
     );
   }

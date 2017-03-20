@@ -12,8 +12,11 @@ class App extends Component {
     }
 
     this._handleClick = this._handleClick.bind(this);
-    this._fetchListData = this._fetchListData.bind(this);
     this._updateListData = this._updateListData.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.ajax(this);
   }
 
   _updateListData(item) {
@@ -26,36 +29,14 @@ class App extends Component {
     })
   }
 
-  _fetchListData() {
-    let that = this;
-    return fetch('http://jsonplaceholder.typicode.com/posts/1', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'get'
-    })
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error(response)
-        } else {
-          return response.json()
-        }
-      })
-      .then(function (apiData) {
-        that._updateListData(apiData);
-      })
-      .catch(error => error);
-  }
-
   _handleClick() {
-    this._fetchListData();
+    this.props.ajax(this);
   }
 
   render() {
     return (
       <div className="App">
-        <SPList listTitle="My List" listData={this.state.listData} onClick={this._handleClick} />
+        <SPList listTitle="My List" listData={this.state.listData || []} onClick={this._handleClick} />
       </div>
     );
   }

@@ -5,8 +5,7 @@ import './index.css';
 
 const fetchListData = function (component, additionalArgs) {
   console.log('fetchListData');
-  //let that = this;
-  return fetch('http://jsonplaceholder.typicode.com/posts/1', {
+  return fetch('http://jsonplaceholder.typicode.com/posts/', {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -21,8 +20,8 @@ const fetchListData = function (component, additionalArgs) {
       }
     })
     .then(function (apiData) {
-      let newState = [];
-      newState.push(apiData);
+      let newState = !apiData.length ? [apiData] : apiData;
+      console.log('newState:',newState);
       component.setState({
         listData: newState
       })

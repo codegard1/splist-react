@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 
 export class SPList extends Component {
     static propTypes = {
-        listTitle: React.PropTypes.string,
-        listData: React.PropTypes.array,
-        listFetch: React.PropTypes.any,
-        onClick: React.PropTypes.func
+        listData: React.PropTypes.array.isRequired,
+        onClick: React.PropTypes.func.isRequired
     }
 
     render() {

@@ -36,10 +36,10 @@ export class SPListItem extends Component {
     render() {
         return (
             <ul>
-                <li>UserId: {this.props.userId}</li>
-                <li>Id:     {this.props.id}</li>
-                <li>Title:  {this.props.title}</li>
-                <li>Body:   {this.props.body}</li>
+                <li>{this.props.userId && "UserId: " + this.props.userId }</li>
+                <li>{this.props.id && "Id: " + this.props.id}</li>
+                <li>{this.props.title && "Title: " + this.props.title}</li>
+                <li>{this.props.body && "Body: " + this.props.body}</li>
             </ul>
         );
     }

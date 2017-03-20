@@ -17,8 +17,12 @@ class App extends Component {
   }
 
   _updateListData(item) {
+    console.log('_updateListData', item);
+    //item is an object literal
+    let newState = [];
+    newState.push(item);
     this.setState({
-      listData: item
+      listData: newState
     })
   }
 
@@ -39,8 +43,7 @@ class App extends Component {
         }
       })
       .then(function (apiData) {
-        let item = Object.keys(apiData).map((key, index) => (key + ": " + apiData[key]));
-        that._updateListData(item);
+        that._updateListData(apiData);
       })
       .catch(error => error);
   }

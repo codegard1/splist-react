@@ -1,6 +1,8 @@
+const fetchURL = "http://jsonplaceholder.typicode.com/posts/";
+
 export function fetchListData(component, additionalArgs) {
   console.log('fetchListData');
-  return fetch('http://jsonplaceholder.typicode.com/posts/', {
+  return fetch(fetchURL, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -21,5 +23,7 @@ export function fetchListData(component, additionalArgs) {
         listData: newState
       })
     })
-    .catch(error => error);
+    .catch(function (error) {
+      console.log("error:",error.name, error.message, error);
+    });
 }

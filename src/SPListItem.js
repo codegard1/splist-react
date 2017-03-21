@@ -1,29 +1,5 @@
 import React, { Component } from 'react';
 
-
-export class SPList extends Component {
-    static propTypes = {
-        listData: React.PropTypes.array.isRequired,
-        onClick: React.PropTypes.func.isRequired
-    }
-
-    render() {
-        let listItems = this.props.listData.map(
-            (item, index) => <SPListItem key={"listItem-" + index}
-                title={item.title}
-                body={item.body}
-                userId={item.userId}
-                id={item.id} />);
-        return (
-            <div className="SPList">
-                <h2>{this.props.listTitle}</h2>
-                {listItems}
-                <button onClick={this.props.onClick}>Refresh</button>
-            </div >
-        );
-    }
-}
-
 export class SPListItem extends Component {
     static propTypes = {
         userId: React.PropTypes.number,
@@ -35,7 +11,7 @@ export class SPListItem extends Component {
     render() {
         let fieldLabelClass = "ms-font-l SPListItem-fieldLabel";
         let fieldValueClass = "ms-font-m SPListItem-fieldValue";
-        
+
         return (
             <div className="SPListItem">
                 <p>

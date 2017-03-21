@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SPListItem } from './SPList';
+import { SPListItem } from './SPListItem';
 import './App.css';
 import 'office-ui-fabric-react/dist/css/fabric.min.css';
 import { List } from 'office-ui-fabric-react/lib/List';
@@ -47,7 +47,7 @@ class App extends Component {
           </div>
           <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
         </div>
-        
+
         <List items={this.state.listData} onRenderCell={this._renderCell} onClick={this._handleClick} />
       </div>
     );

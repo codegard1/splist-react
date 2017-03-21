@@ -4,3 +4,42 @@
   margin: 2em;
   text-align: left;
 }
+
+/*.ms-Grid-row {
+  border-bottom: 1px solid salmon;
+}*/
+
+.SPListItem {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  border: 1px solid mediumaquamarine;
+}
+
+.SPListItem p {
+  border-left: 1px solid #333;
+  padding-left: 1em;
+}
+
+.SPListItem p span a {
+  /*padding-left: .5em;
+  padding-right: .5em;*/
+  margin: 0;
+  color: #666;
+  text-decoration: none;
+}
+
+.SPListItem-fieldLabel {
+  text-decoration: underline;
+  padding: 2px;
+}
+
+.SPListItem-fieldValue {
+  padding: 0.5em;
+  text-align: justify;
+}
+
+.SPListItem p span a:hover {
+  background-color: gold;
+}

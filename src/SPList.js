@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 export class SPList extends Component {
     static propTypes = {
         listData: React.PropTypes.array.isRequired,
@@ -16,7 +17,7 @@ export class SPList extends Component {
         return (
             <div className="SPList">
                 <h2>{this.props.listTitle}</h2>
-                    {listItems}
+                {listItems}
                 <button onClick={this.props.onClick}>Refresh</button>
             </div >
         );
@@ -32,13 +33,36 @@ export class SPListItem extends Component {
     }
 
     render() {
+        let fieldLabelClass = "ms-font-l SPListItem-fieldLabel";
+        let fieldValueClass = "ms-font-m SPListItem-fieldValue";
+        
         return (
-            <ul>
-                <li>{this.props.userId && "UserId: " + this.props.userId }</li>
-                <li>{this.props.id && "Id: " + this.props.id}</li>
-                <li>{this.props.title && "Title: " + this.props.title}</li>
-                <li>{this.props.body && "Body: " + this.props.body}</li>
-            </ul>
+            <div className="SPListItem">
+                <p>
+                    <span className={fieldLabelClass}>{this.props.id && "Id"}</span>
+                    <br />
+                    <span className={fieldValueClass}>
+                        <a href="#">{this.props.id}</a>
+                    </span>
+                </p>
+                <p>
+                    <span className={fieldLabelClass}>{this.props.userId && "UserId"}</span>
+                    <br />
+                    <span className={fieldValueClass}>
+                        <a href="#">{this.props.userId}</a>
+                    </span>
+                </p>
+                <p>
+                    <span className={fieldLabelClass}>{this.props.title && "Title"}</span>
+                    <br />
+                    <span className={fieldValueClass}>{this.props.title}</span>
+                </p>
+                <p>
+                    <span className={fieldLabelClass}>{this.props.body && "Body"}</span>
+                    <br />
+                    <span className={fieldValueClass}>{this.props.body}</span>
+                </p>
+            </div>
         );
     }
 }

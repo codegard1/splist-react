@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { SPListItem } from './SPList';
 import './App.css';
-
+import 'office-ui-fabric-react/dist/css/fabric.min.css';
 import { List } from 'office-ui-fabric-react/lib/List';
 
 class App extends Component {
@@ -27,13 +27,27 @@ class App extends Component {
 
   _renderCell(item, index) {
     return (
-      <SPListItem {...item} />
+      <div className="ms-Grid-row">
+        <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
+        <div className="ms-Grid-col ms-u-sm10 ms-u-md8 ms-u-lg8">
+          <SPListItem {...item} />
+        </div>
+        <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
+      </div>
     );
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="ms-Grid">
+        <div className="ms-Grid-row">
+          <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
+          <div className="ms-Grid-col ms-u-sm10 ms-u-md8 ms-u-lg8">
+            <span className="ms-font-su">SPList</span>
+          </div>
+          <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
+        </div>
+        
         <List items={this.state.listData} onRenderCell={this._renderCell} onClick={this._handleClick} />
       </div>
     );

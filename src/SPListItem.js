@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 
+
+/* Angular Test List props
+Id: number
+Tite: string
+FirstName: string
+LastName: string
+FullName: string
+Location: string
+*/
+
 export class SPListItem extends Component {
     static propTypes = {
         userId: React.PropTypes.number,

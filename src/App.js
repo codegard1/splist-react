@@ -10,14 +10,11 @@ class App extends Component {
     this.state = {
       listData: []
     }
+    // Fetch listData right away
+    props.ajax(this);
 
     this._handleClick = this._handleClick.bind(this);
     this._renderCell = this._renderCell.bind(this);
-  }
-
-  // Fetch list data right away 
-  componentWillMount() {
-    this.props.ajax(this);
   }
 
   // Fetch list data on button click
@@ -30,7 +27,7 @@ class App extends Component {
       <div className="ms-Grid-row">
         <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
         <div className="ms-Grid-col ms-u-sm10 ms-u-md8 ms-u-lg8">
-          <SPListItem {...item} />
+          <SPListItem key={index} {...item} />
         </div>
         <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
       </div>

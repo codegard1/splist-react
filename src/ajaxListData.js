@@ -10,11 +10,12 @@ export function fetchListData(component, additionalArgs) {
   });
 
   response.done(function (data) {
-    let tmp;
     let newState = !data.length ? [data] : data;
     console.log('newState:', newState);
     component.setState({ listData: newState });
   });
 
-  response.fail(function (jqxhr) { console.log("Ajax Query Failed!") });
+  response.fail(function (jqxhr, status, error) {
+    console.log("Error:", error, status, jqxhr);
+  });
 }

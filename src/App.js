@@ -48,7 +48,7 @@ class App extends Component {
           <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
         </div>
 
-        <List items={this.state.listData} onRenderCell={this._renderCell} onClick={this._handleClick} />
+        <List items={this.state.listData} onRenderCell={this._renderCell} />
       </div>
     );
   }

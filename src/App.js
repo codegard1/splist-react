@@ -10,14 +10,11 @@ class App extends Component {
     this.state = {
       listData: []
     }
+    // Fetch list data right away
+    props.ajax(this);
 
     this._handleClick = this._handleClick.bind(this);
     this._renderCell = this._renderCell.bind(this);
-  }
-
-  // Fetch list data right away 
-  componentWillMount() {
-    this.props.ajax(this);
   }
 
   // Fetch list data on button click
@@ -48,7 +45,7 @@ class App extends Component {
           <div className="ms-Grid-col ms-u-sm1 ms-u-md2 ms-u-lg2"></div>
         </div>
 
-        <List items={this.state.listData} onRenderCell={this._renderCell} onClick={this._handleClick} />
+        <List items={this.state.listData} onRenderCell={this._renderCell} />
       </div>
     );
   }
